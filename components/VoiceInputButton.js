@@ -2,9 +2,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { useForm } from '../context/FormContext';
 
-const API_BASE_URL = 'http://localhost:5000'
-const API_KEY = '123'
-const ELEVENLABS = 'ELEVENLABS'
+const API_BASE_URL = process.env.API_BASE_URL;
+const API_KEY = process.env.API_KEY;
 
 export default function VoiceInputButton() {
   const [isThinking, setIsThinking] = useState(false)
