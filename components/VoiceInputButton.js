@@ -259,6 +259,10 @@ export default function VoiceInputButton() {
   const textToSpeech = async (ai_response_message) => {
     const formData = new FormData();
     formData.append('message', ai_response_message);
+    formData.append('voiceStability', 0.86);
+    formData.append('voiceSimilarity', 0.98);
+    formData.append('voiceStyle', 0.25);
+    formData.append('useSpeakerBoost', true);
   
     try {
       const response = await fetch(`${API_BASE_URL}/speak`, {
