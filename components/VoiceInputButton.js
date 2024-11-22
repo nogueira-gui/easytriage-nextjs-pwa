@@ -263,6 +263,9 @@ export default function VoiceInputButton() {
     try {
       const response = await fetch(`${API_BASE_URL}/speak`, {
         method: 'POST',
+        headers: {
+          'Authorization': API_KEY
+        },
         body: formData,
       });
   
